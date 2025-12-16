@@ -58,7 +58,7 @@ const ImageGallery: NextPage<Props> = ({ images, productName }) => {
               onClick={() => setSelectedImageIndex(index)}
               className={`flex shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-colors ${
                 selectedImageIndex === index
-                  ? "border-[#001f3f]"
+                  ? "border-emerald-600"
                   : "border-border hover:border-muted-foreground"
               }`}
             >

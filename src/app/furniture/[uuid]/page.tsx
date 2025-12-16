@@ -242,7 +242,7 @@ const DetailFurniture: NextPage<Props> = ({ params }) => {
               <a
                 href="#"
                 target="_blank"
-                className="flex-1 flex items-center justify-center gap-2 px-8 py-3 bg-green-600 text-white rounded-lg hover:opacity-90 transition-opacity font-medium"
+                className="flex-1 flex items-center justify-center gap-2 px-8 py-3 bg-emerald-600 text-white rounded-lg hover:opacity-90 transition-opacity font-medium"
               >
                 <FaWhatsapp className="w-5 h-5" />
                 Hubungi Kami

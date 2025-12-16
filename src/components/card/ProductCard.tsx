@@ -20,12 +20,12 @@ const ProductCard: NextPage<Props> = ({ product }) => {
         )}
 
         <div className="productOptions flex-col gap-2 absolute right-2 top-2 text-xl font-semibold z-10 hidden group-hover:flex animate-slideIn">
-          {/* <div className="w-8 h-8 bg-white rounded-lg shadow-md flex items-center justify-center cursor-pointer text-gray-500 hover:text-white hover:bg-[#001f3f]">
+          {/* <div className="w-8 h-8 bg-white rounded-lg shadow-md flex items-center justify-center cursor-pointer text-gray-500 hover:text-white hover:bg-emerald-600">
             <Heart className="w-5 h-5" />
           </div> */}
           {/* <Link
             href={url}
-            className="w-8 h-8 bg-white rounded-lg shadow-md flex items-center justify-center cursor-pointer text-gray-500 hover:text-white hover:bg-[#001f3f]"
+            className="w-8 h-8 bg-white rounded-lg shadow-md flex items-center justify-center cursor-pointer text-gray-500 hover:text-white hover:bg-emerald-600"
           >
             <Eye className="w-5 h-5" />
           </Link> */}

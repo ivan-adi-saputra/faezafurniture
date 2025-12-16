@@ -51,7 +51,7 @@ const ProductTab: NextPage<Props> = ({ product }) => {
               py-2 px-4 text-sm font-semibold transition-colors duration-200 cursor-pointer
               ${
                 activeTab === tab.key
-                  ? "text-[#001f3f] border-b-2 border-[#001f3f]"
+                  ? "text-emerald-600 border-b-2 border-emerald-600"
                   : "text-gray-500 hover:text-gray-700"
               }
               focus:outline-none

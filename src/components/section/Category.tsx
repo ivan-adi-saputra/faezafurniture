@@ -41,7 +41,7 @@ const Category: NextPage<Props> = ({}) => {
             className={`w-8 h-8 flex items-center justify-center rounded-full transition-colors ${
               isBeginning
                 ? "opacity-50 cursor-not-allowed bg-gray-400"
-                : "text-white cursor-pointer bg-[#001f3f]"
+                : "text-white cursor-pointer bg-emerald-600"
             }`}
             id="prevBtn"
             disabled={isBeginning}
@@ -52,7 +52,7 @@ const Category: NextPage<Props> = ({}) => {
             className={`w-8 h-8 flex items-center justify-center rounded-full transition-colors ${
               isEnd
                 ? "opacity-50 cursor-not-allowed bg-gray-400"
-                : "text-white cursor-pointer bg-[#001f3f]"
+                : "text-white cursor-pointer bg-emerald-600"
             }`}
             id="nextBtn"
             disabled={isEnd}

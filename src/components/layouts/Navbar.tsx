@@ -14,7 +14,7 @@ import {
 } from "../ui/navigation-menu";
 import { categories } from "@/dataOld/categories";
 import { useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
 import { updateUrlParam } from "@/lib/helpers";
 
@@ -38,6 +38,7 @@ const navbarLists = [
 const Navbar: NextPage<Props> = ({}) => {
   const params = useSearchParams();
   const router = useRouter();
+  const pathname = usePathname();
   const [search, setSearch] = useState<string>("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
 
@@ -77,7 +78,7 @@ const Navbar: NextPage<Props> = ({}) => {
                 }
               }}
               placeholder="Search for products"
-              className="w-full h-10 px-4 pr-10 border font-semibold text-gray-500 border-gray-300 rounded-lg placeholder:font-semibold focus:outline-none focus:ring-2 focus:ring-[#001f3f]"
+              className="w-full h-10 px-4 pr-10 border font-semibold text-gray-500 border-gray-300 rounded-lg placeholder:font-semibold focus:outline-none focus:ring-2 focus:ring-emerald-600"
             />
             <button
               type="button"
@@ -90,7 +91,7 @@ const Navbar: NextPage<Props> = ({}) => {
 
           <Link
             href={"/"}
-            className="hidden lg:flex items-center space-x-2 border border-gray-300 px-4 py-2 rounded-lg hover:text-white hover:bg-[#001f3f] transition-colors"
+            className="hidden lg:flex items-center space-x-2 border border-gray-300 px-4 py-2 rounded-lg hover:text-white hover:bg-emerald-600 transition-colors"
           >
             <MapPin className="w-5 h-5" />
             <span className="font-semibold">Location</span>
@@ -127,7 +128,7 @@ const Navbar: NextPage<Props> = ({}) => {
                 <Link
                   target="blank"
                   href="#"
-                  className="flex w-full items-center justify-center gap-2 py-2 px-3 text-white bg-green-600 rounded-md hover:bg-green-700"
+                  className="flex w-full items-center justify-center gap-2 py-2 px-3 text-white bg-emerald-600 rounded-md hover:bg-green-700"
                 >
                   <FaWhatsapp /> Hubungi Kami
                 </Link>
@@ -142,14 +143,14 @@ const Navbar: NextPage<Props> = ({}) => {
           <Link
             target="blank"
             href="#"
-            className="flex w-full items-center justify-center gap-2 py-2 px-3 text-white bg-green-600 rounded-md hover:bg-green-700"
+            className="flex w-full items-center justify-center gap-2 py-2 px-3 text-white bg-emerald-600 rounded-md hover:bg-green-700"
           >
             <FaWhatsapp /> Hubungi Kami
           </Link>
 
           {/* <Link
             href="#"
-            className="relative text-gray-600 hover:text-green-600"
+            className="relative text-gray-600 hover:text-emerald-600"
           >
             <Heart className="h-7 w-7" />
             <span className="absolute top-0 right-0 -mr-2 -mt-1 w-4 h-4 text-xs font-bold bg-green-500 text-white rounded-full flex items-center justify-center">
@@ -158,7 +159,7 @@ const Navbar: NextPage<Props> = ({}) => {
           </Link>
           <Link
             href="#"
-            className="relative text-gray-600 hover:text-green-600"
+            className="relative text-gray-600 hover:text-emerald-600"
           >
             <ShoppingBag className="h-7 w-7" />
             <span className="absolute top-0 right-0 -mr-2 -mt-1 w-4 h-4 text-xs font-bold bg-green-500 text-white rounded-full flex items-center justify-center">
@@ -172,7 +173,7 @@ const Navbar: NextPage<Props> = ({}) => {
         <NavigationMenu viewport={false}>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="px-4 py-5 space-x-2 bg-[#001f3f]! text-white! hover:text-white! data-[state=open]:bg-[#001f3f]! data-[state=open]:text-white!">
+              <NavigationMenuTrigger className="px-4 py-5 space-x-2 bg-emerald-600! text-white! hover:text-white! data-[state=open]:bg-emerald-600! data-[state=open]:text-white!">
                 <LayoutGrid className="h-5 w-5" /> Semua Kategori
               </NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -198,9 +199,13 @@ const Navbar: NextPage<Props> = ({}) => {
               <NavigationMenuItem key={index}>
                 <NavigationMenuLink
                   asChild
-                  className={navigationMenuTriggerStyle()}
+                  className={`${navigationMenuTriggerStyle()} ${
+                    pathname == nav.url
+                      ? `text-emerald-600 hover:text-emerald-600`
+                      : `text-gray-600 hover:text-gray-600`
+                  }`}
                 >
-                  <Link href={nav.url} className="font-bold text-gray-600">
+                  <Link href={nav.url} className={`font-bold`}>
                     {nav.title}
                   </Link>
                 </NavigationMenuLink>

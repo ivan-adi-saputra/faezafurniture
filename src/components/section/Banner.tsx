@@ -21,15 +21,15 @@ const banners = [
   //   img: "/images/banners/banner-1.jpg",
   // },
   {
-    title: "Best collection <br /> for home decoration",
+    title: "Koleksi Terbaik <br /> untuk Dekorasi Rumah",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio <br /> in provident amet reiciendis quibusdam consectetur",
+      "Temukan ragam produk furniture dan dekorasi rumah berkualitas tinggi. <br /> Wujudkan rumah impian Anda dengan gaya yang tak tertandingi.",
     img: "/images/banners/banner-2.jpg",
   },
   {
-    title: "Best collection <br /> for home decoration",
+    title: "Tampilan Baru! <br /> Furniture Tren Terkini",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio <br /> in provident amet reiciendis quibusdam consectetur",
+      "Jelajahi inspirasi desain interior terbaru yang sedang hits. <br /> Ubah suasana rumah Anda dengan sentuhan modern dan elegan.",
     img: "/images/banners/banner-3.jpg",
   },
 ];
@@ -81,7 +81,7 @@ const Banner: NextPage<Props> = ({}) => {
             >
               <Link
                 href="/furniture"
-                className="text-white bg-[#001f3f] px-6 md:px-8 py-2 md:py-3 text-xs md:text-base font-medium rounded-md hover:opacity-90 transition"
+                className="text-white bg-emerald-600 px-6 md:px-8 py-2 md:py-3 text-xs md:text-base font-medium rounded-md hover:opacity-90 transition"
               >
                 Shop Now
               </Link>

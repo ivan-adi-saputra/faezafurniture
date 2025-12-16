@@ -57,7 +57,7 @@ export const ProductFilterMd: NextPage<Props> = ({
         {isFilterActive && (
           <button
             onClick={handleApplyFilter}
-            className="w-full py-2 bg-[#001f3f] text-white rounded-lg cursor-pointer"
+            className="w-full py-2 bg-emerald-600 text-white rounded-lg cursor-pointer"
           >
             Tampilkan Produk
           </button>
@@ -79,7 +79,7 @@ export const ProductFilterSm: NextPage<Props> = ({
       <DrawerTrigger asChild>
         <button
           onClick={() => {}}
-          className="flex items-center gap-2 px-4 py-2 text-sm bg-[#001f3f] text-white md:hidden rounded-lg hover:opacity-90 transition-opacity"
+          className="flex items-center gap-2 px-4 py-2 text-sm bg-emerald-600 text-white md:hidden rounded-lg hover:opacity-90 transition-opacity"
         >
           <Filter className="w-5 h-5" />
           Filters
@@ -104,7 +104,7 @@ export const ProductFilterSm: NextPage<Props> = ({
               <DrawerClose asChild>
                 <button
                   onClick={handleApplyFilter}
-                  className="px-4 py-2 bg-[#001f3f] text-white rounded-lg"
+                  className="px-4 py-2 bg-emerald-600 text-white rounded-lg"
                 >
                   Tampilkan Produk
                 </button>
@@ -147,9 +147,9 @@ const FilterContent: NextPage<PropsFilterContent> = ({
         {categories.map((category, index) => (
           <button
             key={index}
-            className={`border border-[#001f3f] mr-3 mb-3 px-3 py-1 rounded-lg cursor-pointer ${
+            className={`border border-emerald-600 mr-3 mb-3 px-3 py-1 rounded-lg cursor-pointer ${
               filters.categories?.includes(category.id) &&
-              "bg-[#001f3f] text-white"
+              "bg-emerald-600 text-white"
             }`}
             onClick={(e) => handleFilterChange("categories", category.id, true)}
           >
@@ -165,7 +165,7 @@ const FilterContent: NextPage<PropsFilterContent> = ({
           <input
             type="text"
             placeholder="Harga Minimum"
-            className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-[#001f3f]"
+            className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-emerald-600"
             value={
               filters.minPrice ? formatPrice(parseInt(filters.minPrice)) : ""
             }
@@ -177,7 +177,7 @@ const FilterContent: NextPage<PropsFilterContent> = ({
           <input
             type="text"
             placeholder="Harga Maksimum"
-            className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-[#001f3f]"
+            className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-emerald-600"
             value={
               filters.maxPrice ? formatPrice(parseInt(filters.maxPrice)) : ""
             }
@@ -195,7 +195,7 @@ const FilterContent: NextPage<PropsFilterContent> = ({
           <input
             type="text"
             placeholder="Diskon Minimum"
-            className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-[#001f3f]"
+            className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-emerald-600"
             value={
               filters.minDiscount
                 ? formatPrice(parseInt(filters.minDiscount))
@@ -212,7 +212,7 @@ const FilterContent: NextPage<PropsFilterContent> = ({
           <input
             type="text"
             placeholder="Diskon Maksimum"
-            className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-[#001f3f]"
+            className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-emerald-600"
             value={
               filters.maxDiscount
                 ? formatPrice(parseInt(filters.maxDiscount))

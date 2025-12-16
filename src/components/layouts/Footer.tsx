@@ -58,7 +58,7 @@ const Footer: NextPage<Props> = ({}) => {
                   className={`text-gray-400 ${
                     social.color
                       ? `hover:text-[${social.color}]`
-                      : "hover:text-[#001f3f]"
+                      : "hover:text-emerald-600"
                   } transition`}
                 >
                   {social.icon}
@@ -80,7 +80,7 @@ const Footer: NextPage<Props> = ({}) => {
                       className={`text-base text-gray-500 ${
                         social.color
                           ? `hover:text-[${social.color}]`
-                          : "hover:text-[#001f3f]"
+                          : "hover:text-emerald-600"
                       } flex gap-2 items-center`}
                     >
                       <div
@@ -88,7 +88,7 @@ const Footer: NextPage<Props> = ({}) => {
                       ${
                         social.color
                           ? `text-[${social.color}]`
-                          : "text-[#001f3f]"
+                          : "text-emerald-600"
                       }
                       `}
                       >
@@ -124,7 +124,7 @@ const Footer: NextPage<Props> = ({}) => {
                       onClick={() =>
                         updateUrlParam(router, "categories", category.id)
                       }
-                      className="text-base text-gray-500 hover:text-[#001f3f] block cursor-pointer"
+                      className="text-base text-gray-500 hover:text-emerald-600 block cursor-pointer"
                     >
                       {category.title}
                     </a>
@@ -140,7 +140,7 @@ const Footer: NextPage<Props> = ({}) => {
                     <Link
                       key={index}
                       href={`/furniture/${product.uuid}`}
-                      className="text-base text-gray-500 hover:text-[#001f3f] block"
+                      className="text-base text-gray-500 hover:text-emerald-600 block"
                     >
                       {product.title}
                     </Link>
