@@ -8,7 +8,7 @@ interface Props {
 }
 
 const ProductCard: NextPage<Props> = ({ product }) => {
-  let url = `furniture/${product.uuid}`;
+  let url = `/furniture/${product.uuid}`;
 
   return (
     <Link href={url}>

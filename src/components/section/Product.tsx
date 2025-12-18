@@ -1,6 +1,5 @@
 "use client";
 
-import { categories } from "@/dataOld/categories";
 import { products as dataProducts } from "@/data/products";
 import { Eye, Heart, Star, StarHalf } from "lucide-react";
 import { NextPage } from "next";
@@ -52,21 +51,21 @@ const Product: NextPage<Props> = ({}) => {
 
 export const ProductLoading = ({}) => {
   return (
-    <div className="product_pic cursor-pointer overflow-hidden flex flex-col gap-2 w-full h-92 border border-gray-300 shadow-md bg-white rounded-lg relative animate-pulse">
+    <div className="product_pic cursor-pointer overflow-hidden flex flex-col gap-2 w-full h-64 md:h-88 border border-gray-300 shadow-md bg-white rounded-lg relative animate-pulse">
       <div className="absolute top-2 left-2 w-12 h-5 bg-gray-300 rounded-md"></div>
 
       <div className="absolute right-2 top-2 flex flex-col gap-2">
         <div className="w-8 h-8 bg-gray-300 rounded-lg"></div>
         <div className="w-8 h-8 bg-gray-300 rounded-lg"></div>
-        <div className="w-8 h-8 bg-gray-300 rounded-lg"></div>
-        <div className="w-8 h-8 bg-gray-300 rounded-lg"></div>
+        <div className="w-8 h-8 bg-gray-300 rounded-lg hidden md:block"></div>
+        <div className="w-8 h-8 bg-gray-300 rounded-lg hidden md:block"></div>
       </div>
 
       <div className="w-full h-1/2 mb-2 bg-gray-300 rounded-md"></div>
 
       <div className="p-4 flex flex-col gap-3">
         <div className="w-24 h-4 bg-gray-300 rounded"></div>
-        <div className="w-40 h-5 bg-gray-300 rounded"></div>
+        <div className="w-28 h-5 bg-gray-300 rounded"></div>
 
         <div className="flex gap-1">
           <div className="w-4 h-4 bg-gray-300 rounded"></div>
@@ -76,9 +75,9 @@ export const ProductLoading = ({}) => {
           <div className="w-4 h-4 bg-gray-300 rounded"></div>
         </div>
 
-        <div className="flex gap-3">
+        <div className="flex gap-3 items-center">
           <div className="w-12 h-4 bg-gray-300 rounded"></div>
-          <div className="w-14 h-5 bg-gray-300 rounded"></div>
+          <div className="w-14 h-3 bg-gray-300 rounded hidden md:block"></div>
         </div>
       </div>
     </div>

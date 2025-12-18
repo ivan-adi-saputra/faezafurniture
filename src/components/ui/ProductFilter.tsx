@@ -1,4 +1,3 @@
-import { categories } from "@/dataOld/categories";
 import { formatPrice } from "@/lib/helpers";
 import { ProductFilters } from "@/types/Product";
 import { NextPage } from "next";
@@ -13,6 +12,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Filter } from "lucide-react";
+import { categories } from "@/data/categories";
 
 interface Props {
   isFilterActive: boolean;

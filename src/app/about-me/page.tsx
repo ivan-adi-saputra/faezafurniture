@@ -2,8 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { contactConfigs, siteConfigs } from "@/config";
 import {
-  ArrowRight,
   ExternalLink,
   Heart,
   Lightbulb,
@@ -12,6 +12,7 @@ import {
   Users,
 } from "lucide-react";
 import { NextPage } from "next";
+import Link from "next/link";
 
 interface Props {}
 
@@ -178,24 +179,14 @@ const AboutMe: NextPage<Props> = ({}) => {
               <div className="order-2">
                 <div className="mb-4">
                   <h3 className="text-2xl font-bold text-foreground mb-1">
-                    Haviesta Efendi
+                    {siteConfigs.owner.name}
                   </h3>
                   <p className="text-emerald-600 font-medium">
-                    Founder & Creative Director
+                    {siteConfigs.owner.position}
                   </p>
                 </div>
                 <p className="text-muted-foreground leading-relaxed">
-                  Fendi membawa keahlian lebih dari satu dekade dalam desain
-                  furniture dan industri dekorasi rumah. Dengan mata yang tajam
-                  terhadap inovasi estetika dan pemahaman mendalam tentang apa
-                  yang membuat sebuah rumah terasa seperti rumah, ia membangun
-                  Faeza Furniture di atas pilar keahlian pengerjaan berkualitas
-                  dan nilai-nilai yang berpusat pada pelanggan. Komitmennya yang
-                  teguh terhadap kepuasan pelanggan mendorong setiap keputusan
-                  desain, memastikan bahwa setiap produk tidak hanya memenuhi
-                  tetapi juga melampaui harapan. Visi Haviesta terus membentuk
-                  evolusi merek, selalu menempatkan pengalaman pelanggan sebagai
-                  inti dari semua yang kami lakukan.
+                  {siteConfigs.owner.description}
                 </p>
               </div>
             </div>
@@ -204,28 +195,14 @@ const AboutMe: NextPage<Props> = ({}) => {
               <div className="order-2 md:order-1">
                 <div className="mb-4">
                   <h3 className="text-2xl font-bold text-foreground mb-1">
-                    Ivan Adi Saputra
+                    {siteConfigs.developer.name}
                   </h3>
                   <p className="text-blue-600 font-medium">
-                    Lead Web Developer
+                    {siteConfigs.developer.position}
                   </p>
                 </div>
                 <p className="text-muted-foreground leading-relaxed">
-                  Ivan adalah otak di balik teknologi yang menciptakan
-                  pengalaman digital Faeza Furniture yang mulus. Dengan keahlian
-                  luas dalam pengembangan web dan solusi e-commerce, ia
-                  memastikan bahwa setiap interaksi pelanggan di platform kami
-                  berjalan lancar, aman, dan intuitif.
-                  {/* Pendekatan inovatifnya
-                  terhadap teknologi sangat berperan dalam menciptakan
-                  pengalaman berbelanja yang sama anggunnya dengan produk
-                  furniture kami.  */}
-                  Pengetahuan mendalam Ivan tentang industri teknologi dan
-                  komitmennya untuk tetap terdepan dalam tren digital menjamin
-                  bahwa platform kami tetap mutakhir, efisien, dan ramah
-                  pengguna.
-                  {/* , menjadikan belanja furniture menyenangkan
-                  mulai dari menjelajah hingga *checkout* */}
+                  {siteConfigs.developer.position}
                 </p>
                 <Card className="border-2 mt-4 border-blue-200 bg-blue-50/50">
                   <CardContent className="p-6">
@@ -238,16 +215,33 @@ const AboutMe: NextPage<Props> = ({}) => {
                       disesuaikan dengan kebutuhan bisnis Anda.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3">
-                      <Button className="bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center gap-2">
-                        <MessageCircle className="w-4 h-4" />
-                        Hubungi via WhatsApp
-                      </Button>
                       <Button
+                        asChild
+                        className="bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center gap-2"
+                      >
+                        <Link
+                          href={contactConfigs.developer.whatsappLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <MessageCircle className="w-4 h-4" />
+                          Hubungi via WhatsApp
+                        </Link>
+                      </Button>
+
+                      <Button
+                        asChild
                         variant="outline"
                         className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white flex items-center justify-center gap-2 bg-transparent"
                       >
-                        <ExternalLink className="w-4 h-4" />
-                        Lihat Portofolio
+                        <Link
+                          href={contactConfigs.developer.portfolioLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                          Lihat Portofolio
+                        </Link>
                       </Button>
                     </div>
                   </CardContent>

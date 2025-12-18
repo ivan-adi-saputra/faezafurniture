@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import ImageGallery from "@/components/ui/ImageGallery";
 import ProductTab from "@/components/ui/ProductTab";
+import { contactConfigs } from "@/config";
 import { categories } from "@/data/categories";
 import { products } from "@/data/products";
 import { formatPrice } from "@/lib/helpers";
@@ -240,8 +241,9 @@ const DetailFurniture: NextPage<Props> = ({ params }) => {
               </div> */}
 
               <a
-                href="#"
                 target="_blank"
+                href={contactConfigs.owner.whatsappLink}
+                rel="noopener noreferrer"
                 className="flex-1 flex items-center justify-center gap-2 px-8 py-3 bg-emerald-600 text-white rounded-lg hover:opacity-90 transition-opacity font-medium"
               >
                 <FaWhatsapp className="w-5 h-5" />
@@ -263,16 +265,22 @@ const DetailFurniture: NextPage<Props> = ({ params }) => {
             {/* Info */}
             <div className="grid grid-cols-3 gap-4 pt-8 border-t border-border">
               <div>
-                <p className="text-sm text-muted-foreground">Shipping</p>
-                <p className="font-semibold text-foreground">Free Delivery</p>
+                <p className="text-sm text-muted-foreground">Layanan</p>
+                <p className="font-semibold text-foreground text-sm md:text-base">
+                  Custom Desain
+                </p>
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">Returns</p>
-                <p className="font-semibold text-foreground">30 Days</p>
+                <p className="text-sm text-muted-foreground">Konstruksi</p>
+                <p className="font-semibold text-foreground text-sm md:text-base">
+                  Tangan Ahli
+                </p>
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">Warranty</p>
-                <p className="font-semibold text-foreground">2 Years</p>
+                <p className="text-sm text-muted-foreground">Pengiriman</p>
+                <p className="font-semibold text-foreground text-sm md:text-base">
+                  Aman & Cepat
+                </p>
               </div>
             </div>
           </div>

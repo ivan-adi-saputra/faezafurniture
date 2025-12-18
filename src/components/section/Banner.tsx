@@ -10,6 +10,7 @@ import "swiper/css";
 import "swiper/css/parallax";
 import "swiper/css/autoplay";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 interface Props {}
 
@@ -21,15 +22,15 @@ const banners = [
   //   img: "/images/banners/banner-1.jpg",
   // },
   {
-    title: "Koleksi Terbaik <br /> untuk Dekorasi Rumah",
+    title: "Jelajahi Inspirasi Rumah <br /> dengan Desain Berkelas",
     description:
-      "Temukan ragam produk furniture dan dekorasi rumah berkualitas tinggi. <br /> Wujudkan rumah impian Anda dengan gaya yang tak tertandingi.",
+      "Temukan koleksi furniture eksklusif yang memadukan keindahan dan kenyamanan. <br /> Pilih desain favorit Anda dan ciptakan suasana rumah yang lebih hidup.",
     img: "/images/banners/banner-2.jpg",
   },
   {
-    title: "Tampilan Baru! <br /> Furniture Tren Terkini",
+    title: "Wujudkan Ruang Impian <br /> dengan Furniture Pilihan",
     description:
-      "Jelajahi inspirasi desain interior terbaru yang sedang hits. <br /> Ubah suasana rumah Anda dengan sentuhan modern dan elegan.",
+      "Hadirkan sentuhan elegan di setiap sudut ruangan dengan pengerjaan terbaik. <br /> Lihat beragam pilihan produk unggulan kami untuk melengkapi kebahagiaan keluarga.",
     img: "/images/banners/banner-3.jpg",
   },
 ];
@@ -66,24 +67,35 @@ const Banner: NextPage<Props> = ({}) => {
 
           <div className="container content relative z-10 px-4 md:px-12 py-16 sm:py-10 md:py-24 lg:py-32">
             <h1
-              className="text-2xl md:text-5xl lg:text-6xl font-bold md:font-medium text-gray-800 mb-2 md:mb-4 capitalize"
+              className="text-xl md:text-5xl lg:text-6xl font-bold md:font-medium text-gray-800 mb-2 md:mb-4 capitalize"
               data-swiper-parallax={parallaxAmount * 0.7}
               dangerouslySetInnerHTML={{ __html: banner.title }}
             ></h1>
+            {/* Teks utuh untuk layar md ke atas */}
             <p
-              className="text-gray-700 text-xs md:text-base"
+              className="hidden md:block text-gray-700 text-base"
               data-swiper-parallax={parallaxAmount * 0.5}
               dangerouslySetInnerHTML={{ __html: banner.description }}
-            ></p>
+            />
+
+            {/* Teks hanya sampai sebelum <br> untuk layar kecil */}
+            <p
+              className="block md:hidden text-gray-700 text-xs"
+              data-swiper-parallax={parallaxAmount * 0.5}
+              dangerouslySetInnerHTML={{
+                __html: banner.description.split("<br>")[0].split("<br />")[0],
+              }}
+            />
             <div
               className="mt-6 md:mt-12"
               data-swiper-parallax={parallaxAmount * 0.3}
             >
               <Link
                 href="/furniture"
-                className="text-white bg-emerald-600 px-6 md:px-8 py-2 md:py-3 text-xs md:text-base font-medium rounded-md hover:opacity-90 transition"
+                className="group inline-flex items-center text-white bg-emerald-600 px-4 md:px-8 py-2 md:py-3 text-[10px] md:text-base font-medium rounded-md transition-all hover:bg-emerald-600"
               >
-                Shop Now
+                <span>Jelajahi Koleksi</span>
+                <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
           </div>

@@ -5,35 +5,11 @@ import Link from "next/link";
 import { categories } from "@/data/categories";
 import { products } from "@/data/products";
 import { benefits } from "@/data/benefits";
-import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { updateUrlParam } from "@/lib/helpers";
 import { useRouter } from "next/navigation";
+import { contactConfigs, siteConfigs } from "@/config";
 
 interface Props {}
-
-const socialMediaLists = [
-  {
-    title: `Facebook`,
-    icon: <FaFacebook />,
-    value: "Faeza Furniture",
-    url: "",
-    color: "#1877F2",
-  },
-  {
-    title: `WhatsApp`,
-    icon: <FaWhatsapp />,
-    value: "08812342312",
-    url: "",
-    color: "#08e559ff",
-  },
-  {
-    title: `Instagram`,
-    icon: <FaInstagram />,
-    value: "faezafurniture",
-    url: "",
-    color: "#c1558b",
-  },
-];
 
 const Footer: NextPage<Props> = ({}) => {
   const router = useRouter();
@@ -44,17 +20,14 @@ const Footer: NextPage<Props> = ({}) => {
         <div className="container grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6">
           <div className="col-span-1 space-y-3">
             <h1 className="font-semibold text-3xl text-gray-700">
-              Faeza Furniture
+              {siteConfigs.name}
             </h1>
-            <p className="text-gray-500">
-              Menyediakan berbagai produk mebel Jepara berkualitas tinggi untuk
-              rumah maupun bisnis Anda.
-            </p>
+            <p className="text-gray-500">{siteConfigs.description}</p>
             <div className="flex items-center space-x-5">
-              {socialMediaLists.map((social, index) => (
+              {contactConfigs.owner.socials.map((social, index) => (
                 <Link
                   key={index}
-                  href={social.url}
+                  href={social.link}
                   className={`text-gray-400 ${
                     social.color
                       ? `hover:text-[${social.color}]`
@@ -73,17 +46,19 @@ const Footer: NextPage<Props> = ({}) => {
                   Social Media
                 </h2>
                 <div className="mt-4 space-y-3">
-                  {socialMediaLists.map((social, index) => (
+                  {contactConfigs.owner.socials.map((social, index) => (
                     <Link
-                      href={social.url}
                       key={index}
+                      href={social.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={`text-base text-gray-500 ${
                         social.color
                           ? `hover:text-[${social.color}]`
                           : "hover:text-emerald-600"
                       } flex gap-2 items-center`}
                     >
-                      <div
+                      <span
                         className={`
                       ${
                         social.color
@@ -93,8 +68,8 @@ const Footer: NextPage<Props> = ({}) => {
                       `}
                       >
                         {social.icon}
-                      </div>{" "}
-                      {social.value}
+                      </span>
+                      {social.account}
                     </Link>
                   ))}
                 </div>
@@ -155,13 +130,14 @@ const Footer: NextPage<Props> = ({}) => {
       <div className="bg-gray-200 py-4 px-4 md:px-12">
         <div className="container flex items-center justify-center">
           <p className="font-semibold">
-            &copy; 2025 Faeza Furniture By{" "}
+            &copy; {siteConfigs.year} {siteConfigs.name} By&nbsp;
             <Link
-              href={"https://ivansaputradev.vercel.app/"}
+              href={contactConfigs.developer.portfolioLink}
               target="_blank"
+              rel="noopener noreferrer"
               className="text-blue-600"
             >
-              Ivan Adi Saputra
+              {siteConfigs.developer.name}
             </Link>
           </p>
         </div>

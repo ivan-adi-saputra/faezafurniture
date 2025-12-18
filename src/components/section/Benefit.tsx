@@ -5,7 +5,7 @@ interface Props {}
 
 const Benefit: NextPage<Props> = ({}) => {
   return (
-    <div className="container mt-20 mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div className="container mt-20 mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
       {benefits.map((benefit, index) => (
         <div
           key={index}

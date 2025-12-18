@@ -246,7 +246,15 @@ const Furniture: NextPage<Props> = ({}) => {
       const scrollPosition =
         window.innerHeight + document.documentElement.scrollTop;
 
-      const targetPosition = document.documentElement.offsetHeight - 500;
+      const width = window.innerWidth;
+      let offset: number;
+
+      if (width < 640) {
+        offset = 750; // sm
+      } else {
+        offset = 500; // md
+      }
+      const targetPosition = document.documentElement.offsetHeight - offset;
 
       if (scrollPosition >= targetPosition && !isAppending && hasMore) {
         loadMoreProducts();
