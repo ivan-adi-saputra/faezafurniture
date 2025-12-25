@@ -202,7 +202,7 @@ const AboutMe: NextPage<Props> = ({}) => {
                   </p>
                 </div>
                 <p className="text-muted-foreground leading-relaxed">
-                  {siteConfigs.developer.position}
+                  {siteConfigs.developer.description}
                 </p>
                 <Card className="border-2 mt-4 border-blue-200 bg-blue-50/50">
                   <CardContent className="p-6">

@@ -15,7 +15,7 @@ import { categories } from "@/data/categories";
 import { products } from "@/data/products";
 import { formatPrice } from "@/lib/helpers";
 import { Product } from "@/types/Product";
-import { Star, StarHalf } from "lucide-react";
+import { ArrowLeft, PackageSearch, Star, StarHalf } from "lucide-react";
 import { NextPage } from "next";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -62,6 +62,37 @@ const DetailFurniture: NextPage<Props> = ({ params }) => {
   useEffect(() => {
     getProduct();
   }, []);
+
+  if (!product && !isLoading) {
+    return (
+      <section className="container mx-auto px-4 py-20">
+        <div className="flex flex-col items-center justify-center text-center space-y-6">
+          <div className="bg-muted p-6 rounded-full">
+            <PackageSearch className="w-16 h-16 text-muted-foreground" />
+          </div>
+          <div className="space-y-2">
+            <h1 className="text-2xl font-bold tracking-tighter md:text-3xl text-gray-800">
+              Produk Tidak Ditemukan
+            </h1>
+            <p className="text-muted-foreground max-w-[600px] mx-auto">
+              Maaf, produk yang Anda cari tidak tersedia atau telah dihapus.
+              Silakan periksa kembali URL atau jelajahi koleksi kami yang lain.
+            </p>
+          </div>
+          <div className="flex gap-4">
+            <Link
+              href={"/furniture"}
+              rel="noopener noreferrer"
+              className="flex-1 flex items-center justify-center gap-2 px-8 py-3 bg-emerald-600 text-white rounded-lg hover:opacity-90 transition-opacity font-medium"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Kembali ke Produk
+            </Link>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="container py-0 md:py-8 px-4 md:px-12">
@@ -240,7 +271,7 @@ const DetailFurniture: NextPage<Props> = ({ params }) => {
                 </button>
               </div> */}
 
-              <a
+              <Link
                 target="_blank"
                 href={contactConfigs.owner.whatsappLink}
                 rel="noopener noreferrer"
@@ -248,7 +279,7 @@ const DetailFurniture: NextPage<Props> = ({ params }) => {
               >
                 <FaWhatsapp className="w-5 h-5" />
                 Hubungi Kami
-              </a>
+              </Link>
 
               {/* <button
                 onClick={() => setIsWishlisted(!isWishlisted)}
